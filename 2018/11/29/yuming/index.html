@@ -151,22 +151,130 @@
 </div>
 
                         <div class="main-body-content">
-                            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM4Ni8xNzkzMw==">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
+                            <article id="post-yuming" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        域名购买和与Github绑定
+        </h1>
+    
 
-       if (typeof LivereTower === 'function') { return; }
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/29/yuming/" class="article-date">
+            <time datetime="2018-11-29T12:10:50.000Z" itemprop="datePublished">2018-11-29</time>
+        </a>
+    </div>
 
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
+		
 
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/gitbub/">gitbub</a>, <a class="tag-link" href="/tags/域名/">域名</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>在搭建完hexo+github系统后，虽说github提供了免费的服务，但是在访问的时候感觉很不方便，每次都有输入yourname.github.io，难记又难听，这是加个域名访问就方便了，而且又方便记忆！</p>
+<h3 id="1-购买域名"><a href="#1-购买域名" class="headerlink" title="1. 购买域名"></a>1. 购买域名</h3><p>目前提供域名服务主要有<a href="https://wanwang.aliyun.com/?spm=5176.8142029.selected.4.e9396d3eMQk078" target="_blank" rel="noopener">阿里云</a>和<a href="https://dnspod.cloud.tencent.com/?from=qcloudProductDns" target="_blank" rel="noopener">腾讯云</a>，这个看个人吧，新用户的一般都有优惠的，比如我以新用户身份在腾讯云买了个1块钱一年的域名（.xyz)。下面我以腾讯云为例：</p>
+<p>去到腾讯云官网：<a href="https://cloud.tencent.com/" target="_blank" rel="noopener">https://cloud.tencent.com</a></p>
+<ul>
+<li>在<strong>产品</strong>中找到<strong>域名注册</strong></li>
+</ul>
+<p><img src="https://i.imgur.com/In3mLiy.png" alt=""></p>
+<ul>
+<li><p>在输入框中输入自己想用的<strong>域名</strong>，点击<strong>查询</strong>，查看域名情况，如果被注册了就换一个咯<br><img src="https://i.imgur.com/wtvhtlE.png" alt=""></p>
+</li>
+<li><p>登录账号（可以QQ或微信扫码登录），第一次登录的话按照提示先完善个人信息，这里就不不多说了<br>，购买完后<br><img src="https://i.imgur.com/mUvaCVE.png" alt=""></p>
+</li>
+</ul>
+<ul>
+<li>拿到github上的IP</li>
+</ul>
+<p>拿到ip的方式很多，我举一个常用的的，打开命令窗口，输入命令</p>
+<blockquote>
+<pre><code>ping yourname.github.io
+</code></pre></blockquote>
+<p>拿到四位数字组成的ip地址后，下面绑定腾讯云</p>
+<ul>
+<li>解析腾讯云域名</li>
+</ul>
+<p><strong>点击解析</strong> 》<strong>新手快速添加</strong> 》把刚刚的<strong>ip**</strong>地址**填上（不支持粘贴，手动添加）</p>
+<ul>
+<li>最后一步：打开您的github仓库（yourname.github.io)</li>
+</ul>
+<p><img src="https://i.imgur.com/CnnOkVL.png" alt=""></p>
+<p><strong>把您的域名填上保存就大功告成了</strong><br><img src="https://i.imgur.com/XEeJRk6.png" alt=""></p>
+<ul>
+<li>访问测试</li>
+</ul>
+<p>打开浏览器，输入  <strong>您的域名</strong>   访问。</p>
+<p><em>如果不行，先不急看看你的url地址（访问地址）是否正确，是否是https开头</em></p>
+<ul>
+<li>介绍完毕，若有问题可以在我的<a href="https://weibo.com/u/5720584899?is_all=1" target="_blank" rel="noopener">微博</a>私信我</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
 </div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+
                         </div>
                     </section>
                     <aside id="sidebar">

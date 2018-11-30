@@ -151,22 +151,204 @@
 </div>
 
                         <div class="main-body-content">
-                            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTM4Ni8xNzkzMw==">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
+                            <article id="post-hexoDaJian" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Hexo+github搭建(一）
+        </h1>
+    
 
-       if (typeof LivereTower === 'function') { return; }
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/29/hexoDaJian/" class="article-date">
+            <time datetime="2018-11-29T02:38:23.000Z" itemprop="datePublished">2018-11-29</time>
+        </a>
+    </div>
 
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
+		
 
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/gitbub/">gitbub</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>这是一个hexo从零到搭建完整,按照以下步骤就行，如若了解修改主题，改域名请看下一章</p>
+<h2 id="本章内容"><a href="#本章内容" class="headerlink" title="本章内容"></a>本章内容</h2><ol>
+<li>安装Git Bash</li>
+<li>安装NodeJs</li>
+<li>安装hexo</li>
+<li>生成SSH并添加到github</li>
+<li>部署项目</li>
+<li>上传到github</li>
+</ol>
+<h2 id="1-安装Git-Bash"><a href="#1-安装Git-Bash" class="headerlink" title="1.安装Git Bash"></a>1.安装Git Bash</h2><ul>
+<li>下载地址为：<a href="https://gitforwindows.org" target="_blank" rel="noopener">https://gitforwindows.org</a>(我个人是windows系统）</li>
+<li>安装步骤：双击下载好的exe文件，一路next就好啦</li>
+<li><p>安装好后，可以打开gitbash，查看版本：</p>
+<ul>
+<li>方式1:(桌面）右键鼠标 -&gt; Git Base Here -&gt; （输入命令）<code>git version</code></li>
+<li>方式二：<code>win+r</code>  -&gt; <code>cmd</code> -&gt; <code>git version</code></li>
+</ul>
+<p><img src="https://i.imgur.com/olphrUZ.png" alt=""></p>
+</li>
+</ul>
+<h2 id="2-安装NodeJs"><a href="#2-安装NodeJs" class="headerlink" title="2.安装NodeJs"></a>2.安装NodeJs</h2><p> hexo是基于nodeJS环境的静态博客，里面的npm工具很有用啊，所以还是老老实实把这玩意儿装了吧</p>
+<ul>
+<li>下载地址：<a href="https://nodejs.org/en" target="_blank" rel="noopener">https://nodejs.org/en</a>(说明：LTS为长期支持版，Current为当前最新版)</li>
+<li>安装步骤：反正下载好msi文件后，双击打开安装，也是一路next，不过在Custom Setup这一步记得选 Add to PATH ,这样你就不用自己去配置电脑上环境变量了，装完在按 win + r 快捷键调出运行，然后输入cmd确定，在cmd中输入path可以看到你的node是否配置在里面（环境变量），没有的话你就自由发挥吧。</li>
+<li>查看版本：命令 <code>node -v</code></li>
+</ul>
+<h2 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3.安装hexo"></a>3.安装hexo</h2><ul>
+<li>先创建一个文件夹（用来存放所有blog的东西），然后cd到该文件夹下(或者在该文件夹右键，点击 Git Bash Here)</li>
+<li><p>安装hexo命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后，查看版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化命令：<code>hexo init</code><br>,初始化完成之后打开所在的文件夹可以看到以下文件：<br><img src="https://i.imgur.com/ImsOQVY.png" alt=""></p>
+<ul>
+<li>其中node_modules：是依赖包，</li>
+<li>public：存放的是生成的页面，</li>
+<li>scaffolds：命令生成文章等的模板，</li>
+<li>source：用命令创建的各种文章，</li>
+<li>themes：主题，</li>
+<li>_config.yml：整个博客的配置，</li>
+<li>db.json：source解析所得到的，</li>
+<li>package.json：项目所需模块项目的配置信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-搭桥到github"><a href="#4-搭桥到github" class="headerlink" title="4. 搭桥到github"></a>4. 搭桥到github</h2><ul>
+<li>没账号的创建账号：<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a>，注册问题就不说了，相信大家都会</li>
+<li>注册好了，接着创建一个repo，名称为yourname.github.io, 其中yourname是你的github名称，按照这个规则创建才有用哦，如下：</li>
+</ul>
+<p><img src="https://i.imgur.com/neUOCwI.png" alt=""><br><img src="https://i.imgur.com/uCat0Td.png" alt=""></p>
+<ul>
+<li>创建完成后，回到gitbash中，配置github账户信息（YourName和YourEail都替换成你自己的）：</li>
+</ul>
+<p><img src="https://i.imgur.com/SdfqZPD.png" alt=""></p>
+<ul>
+<li><p>创建SSH</p>
+<p>  在gitbash中输入：<code>ssh-keygen -t rsa -C &quot;你的邮箱&quot;</code> ，生成ssh。然后按下图的方式找到id_rsa.pub文件的内容,复制</p>
+</li>
+<li><p>将上面获取的ssh放到github中：<br>个人（头像）》 settings 》SSH and GPG keys 》 New SSH key 》（title随便写）key里粘贴上面复制的内容 》Add SSH key<br><img src="https://i.imgur.com/H79D4cn.png" alt=""></p>
+</li>
+<li><p>在gitbash中验证是否添加成功：<code>ssh -T git@github.com</code></p>
+</li>
+<li>完成下一步你就成功啦！耐住性子！！！</li>
+</ul>
+<h2 id="5-临门一脚"><a href="#5-临门一脚" class="headerlink" title="5.临门一脚"></a>5.临门一脚</h2><ul>
+<li>用编辑器打开你的blog项目，修改<code>_config.yml</code>文件的一些配置(冒号之后都是有一个半角空格的)<blockquote>
+<pre><code>deploy:
+  type: git
+  repo: https://github.com/YourgithubName/YourgithubName.github.io.git
+  branch: master
+</code></pre></blockquote>
+</li>
+</ul>
+<ul>
+<li><p>回到gitbash中，进入你的blog目录，分别执行以下命令：</p>
+<blockquote>
+<pre><code>hexo clean 
+hexo generate
+hexo server
+</code></pre></blockquote>
+<ul>
+<li>注：若上面出问题，可能是hexo 3.0把服务器独立成个别模块，需要单独安装        <code>npm i hexo-server</code></li>
+</ul>
+</li>
+<li><p>打开浏览器输入：<code>http://localhost:4000</code></p>
+</li>
+<li>接着你就可以看到页面了，是不是很开心涅 ：）<br><img src="https://i.imgur.com/Z4Dmqch.png" alt=""></li>
+</ul>
+<h2 id="最后一步，上传到github"><a href="#最后一步，上传到github" class="headerlink" title="最后一步，上传到github"></a>最后一步，上传到github</h2><ul>
+<li>又安装一波（插件）：先打开 Git Bash ,分别输入 <blockquote>
+<pre><code>cd /
+cd hexo
+npm install –save hexo-deployer-git
+</code></pre></blockquote>
+</li>
+</ul>
+<p><em>注意：没有回到hexo目录,很可能会安装失败！</em></p>
+<p><img src="https://i.imgur.com/uX7wWP8.png" alt=""></p>
+<ul>
+<li><p>执行命令(建议每次都按照如下步骤部署)：</p>
+<blockquote>
+<pre><code>hexo clean
+hexo generate
+hexo deploy
+</code></pre><p><em><br>注意deploy的过程中要输入你的username及passward</em></p>
+</blockquote>
+</li>
+<li><p>在浏览器中输入<code>http://yourgithubname.github.io</code>就可以看到你的个人博客啦，是不是很兴奋！</p>
+</li>
+</ul>
+<h3 id="修改主题和域名看下一篇"><a href="#修改主题和域名看下一篇" class="headerlink" title="修改主题和域名看下一篇"></a>修改主题和域名看下一篇</h3>
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
 </div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+
                         </div>
                     </section>
                     <aside id="sidebar">
