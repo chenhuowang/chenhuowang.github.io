@@ -21,7 +21,7 @@
 <meta property="og:description" content="1.通过Spring Initializr初始化一个Web项目 1).浏览器打开地址：https://start.spring.io   1https://start.spring.io     2).选好项目，设置好Group、Artifact名称等，点击Generate Project alk下载，之后 即可（以gradle项目为例）  2.编译、启动gradle项目 cd 到项目更目录，然后">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.imgur.com/Qn77lsh.png">
-<meta property="og:updated_time" content="2018-12-08T07:32:53.065Z">
+<meta property="og:updated_time" content="2018-12-08T13:48:40.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速创建springboot的Web项目">
 <meta name="twitter:description" content="1.通过Spring Initializr初始化一个Web项目 1).浏览器打开地址：https://start.spring.io   1https://start.spring.io     2).选好项目，设置好Group、Artifact名称等，点击Generate Project alk下载，之后 即可（以gradle项目为例）  2.编译、启动gradle项目 cd 到项目更目录，然后">
@@ -206,16 +206,32 @@
 <li>修改build.gradle的中央仓库</li>
 </ul>
 <p>使用阿里云仓库：</p>
-<pre><code>//mavenCentral()
-
-maven {
-    url &apos;http://maven.aliyun.com/nexus/content/groups/public/&apos;
-}
-</code></pre><h2 id="各种注解"><a href="#各种注解" class="headerlink" title="各种注解"></a>各种注解</h2><ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//mavenCentral()</span><br><span class="line">    </span><br><span class="line">maven &#123;</span><br><span class="line">	url <span class="string">'http://maven.aliyun.com/nexus/content/groups/public/'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="各种注解"><a href="#各种注解" class="headerlink" title="各种注解"></a>各种注解</h2><ol>
 <li>程序入口（核心注解）</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication</span><br></pre></td></tr></table></figure>
 <p><img src="https://i.imgur.com/rqm31kN.png" alt=""></p>
+<ol start="2">
+<li>控制层的注解：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Controller 和@RestController</span><br></pre></td></tr></table></figure>
+<ul>
+<li>@Controller 和@RestController的区别：</li>
+</ul>
+<p><strong>返回页面用@Controller，要想返回数据就用@RestController,这个注解对于返回数据比较方便，因为它会自动将对象实体转换为JSON格式。</strong></p>
+<p><em>@RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用。</em></p>
+<p>也就是说对于下面<strong>代码</strong>：使用@Controller会跳转到index页面，而使用@RestController只是在页面返回字符串“index”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(<span class="string">"/index"</span>)</span><br><span class="line">public String <span class="function"><span class="title">index</span></span>() &#123;</span><br><span class="line">	<span class="built_in">return</span> <span class="string">"index"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(<span class="string">"/admins"</span>)</span><br><span class="line">@GetMapping</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(<span class="string">"/&#123;username&#125;"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/AXeC1Lk.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(<span class="string">"/&#123;username&#125;/blogs"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/3w9Q8Km.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(<span class="string">"/&#123;username&#125;/blogs/&#123;id&#125;"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/jb1D1Yw.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping</span><br><span class="line">public String listBlogs(@RequestParam(value=<span class="string">"order"</span>,required=<span class="literal">false</span>,defaultValue=<span class="string">"new"</span>) String order,</span><br><span class="line">	@RequestParam(value=<span class="string">"keyword"</span>,required=<span class="literal">false</span>,defaultValue=<span class="string">""</span>) String keyword</span><br><span class="line">	)&#123;</span><br><span class="line">System.out.println(<span class="string">"order:"</span>+order+<span class="string">",keyword"</span>+keyword);</span><br><span class="line"><span class="built_in">return</span> <span class="string">"redirect:/index?order="</span>+order+<span class="string">"&amp;keyword="</span>+keyword;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/GEjEOHC.png" alt=""></p>
 
         </div>
         <footer class="article-footer">
