@@ -6,21 +6,26 @@
     
 
     
-    <title>分类：: java后台 | 旺仔个人博客</title>
+    <title>Spring Boot中使用hibernate | 旺仔个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="越努力越幸运！">
-<meta name="keywords" content="越努力越幸运！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="旺仔个人博客">
-<meta property="og:url" content="http://yoursite.com/categories/java后台/index.html">
+        <meta name="keywords" content="springboot,hibernate">
+    
+    <meta name="description" content="1.pox.xml文件配置1234567891011&amp;lt;!-- mysql --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope">
+<meta name="keywords" content="springboot,hibernate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot中使用hibernate">
+<meta property="og:url" content="http://yoursite.com/2018/12/09/springBoot_hibernate/index.html">
 <meta property="og:site_name" content="旺仔个人博客">
-<meta property="og:description" content="越努力越幸运！">
+<meta property="og:description" content="1.pox.xml文件配置1234567891011&amp;lt;!-- mysql --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.imgur.com/TFsKJB8.png">
+<meta property="og:updated_time" content="2018-12-09T14:46:49.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="旺仔个人博客">
-<meta name="twitter:description" content="越努力越幸运！">
+<meta name="twitter:title" content="Spring Boot中使用hibernate">
+<meta name="twitter:description" content="1.pox.xml文件配置1234567891011&amp;lt;!-- mysql --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;mysql&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;mysql-connector-java&amp;lt;/artifactId&amp;gt;    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope">
+<meta name="twitter:image" content="https://i.imgur.com/TFsKJB8.png">
     
 
     
@@ -137,131 +142,111 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>分类：: <em class="page-title-link">java后台</em>
+    <a class="page-title-link" href="/categories/java后台/">java后台</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-springBoot_hibernate" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/12/09/springBoot_hibernate/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://i.imgur.com/TFsKJB8.png)" alt="Spring Boot中使用hibernate" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2018/12/09/springBoot_hibernate/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/java后台/">java后台</a>
-            </div>
-            <div class="date"><time datetime="2018-12-09T03:41:01.000Z" itemprop="datePublished">2018-12-09</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/12/09/springBoot_hibernate/">Spring Boot中使用hibernate</a>
+        Spring Boot中使用hibernate
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/12/09/springBoot_hibernate/" class="article-date">
+            <time datetime="2018-12-09T03:41:01.000Z" itemprop="datePublished">2018-12-09</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/hibernate/">hibernate</a>, <a class="tag-link" href="/tags/springboot/">springboot</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://i.imgur.com/TFsKJB8.png" alt="java"></p>
+<h2 id="1-pox-xml文件配置"><a href="#1-pox-xml文件配置" class="headerlink" title="1.pox.xml文件配置"></a>1.pox.xml文件配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- mysql --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!-- JPA --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-application-properties配置"><a href="#2-application-properties配置" class="headerlink" title="2.application.properties配置"></a>2.application.properties配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//DataSource </span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/blog?characterEncoding=utf-8&amp;useSSL=<span class="literal">false</span></span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=123456</span><br><span class="line">spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span><br><span class="line"></span><br><span class="line">// JPA</span><br><span class="line">spring.jpa.show-sql = <span class="literal">true</span></span><br><span class="line">spring.jpa.hibernate.ddl-auto=create-drop</span><br></pre></td></tr></table></figure>
+<h2 id="3-添加实体类注解"><a href="#3-添加实体类注解" class="headerlink" title="3.添加实体类注解"></a>3.添加实体类注解</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//实体类上</span><br><span class="line">@Entity</span><br><span class="line">@Table(name=<span class="string">"user"</span>)</span><br><span class="line"></span><br><span class="line">//主键</span><br><span class="line">@Id </span><br><span class="line">@GeneratedValue(strategy=GenerationType.IDENTITY) //自增策略</span><br><span class="line"></span><br><span class="line">//字段</span><br><span class="line">@Column(nullable = <span class="literal">false</span>) // 映射为字段，值不能为空</span><br></pre></td></tr></table></figure>
+<h2 id="4-建立实体仓库"><a href="#4-建立实体仓库" class="headerlink" title="4.建立实体仓库"></a>4.建立实体仓库</h2><p><strong><em>让实体仓库（接口）继承CrudRepository&lt;T,Id&gt;，即可实现基本的增删改查</em></strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public interface UserRepository extends CrudRepository&lt;User,Long&gt;&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-在控制层中可调用CrudRepository的方法"><a href="#5-在控制层中可调用CrudRepository的方法" class="headerlink" title="5.在控制层中可调用CrudRepository的方法"></a>5.在控制层中可调用CrudRepository的方法</h2><p>常用的方法有：</p>
+<ul>
+<li>findAll()</li>
+<li>findOne()</li>
+<li>sava()</li>
+<li>delete()</li>
+</ul>
+<h2 id="注意：别忘了在mysql中先建立一个对应的数据库，否则无法取得连接（报错）"><a href="#注意：别忘了在mysql中先建立一个对应的数据库，否则无法取得连接（报错）" class="headerlink" title="注意：别忘了在mysql中先建立一个对应的数据库，否则无法取得连接（报错）"></a><em>注意：别忘了在mysql中先建立一个对应的数据库，否则无法取得连接（报错）</em></h2>
+        </div>
+        <footer class="article-footer">
             
-1.pox.xml文件配置1234567891011&lt;!-- mysql --&gt;&lt;dependency&gt;    &lt;groupId&gt;mysql&lt;/groupId&gt;    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;    &lt;scope&gt;runtime&lt;/scope
-        </p>
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/12/08/springboot/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://i.imgur.com/Qn77lsh.png)" alt="快速创建springboot的Web项目" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2018/12/08/springboot/#isso-thread"></a></span>
-    
-</span>
+    <div id="valine-thread"></div>
 
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/java后台/">java后台</a>
-            </div>
-            <div class="date"><time datetime="2018-12-08T01:18:36.000Z" itemprop="datePublished">2018-12-08</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/12/08/springboot/">快速创建springboot的Web项目</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1.通过Spring Initializr初始化一个Web项目
-1).浏览器打开地址：https://start.spring.io
-  1https://start.spring.io
-
-
-
-
-2).选好项目，设置好Group、Artifact名称等，点击Generate Project alk下载，之后 即可（以gradle项目为例）
-
-2.编译、启动gradle项目
-cd 到项目更目录，然后
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
 
@@ -284,6 +269,29 @@ cd 到项目更目录，然后
         </ul>
     </div>
 	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=34014151&auto=0&height=66"></iframe>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/12/09/Day1209/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            日常记录-Day1209
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/12/08/Day1208/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">日常记录-Day1208</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
